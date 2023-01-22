@@ -76,7 +76,7 @@ variable "http" {
   default     = null
 }
 
-variable "secureSettings" {
+variable "secure_settings" {
   type        = any
   description = <<-EOF
     Control Elasticsearch Secure Settings.
@@ -85,7 +85,7 @@ variable "secureSettings" {
   default     = null
 }
 
-variable "updateStrategy" {
+variable "update_strategy" {
   type        = any
   description = <<-EOF
     Settings for limiting the number of simultaneous changes to an Elasticsearch resource.
@@ -94,7 +94,7 @@ variable "updateStrategy" {
   default     = null
 }
 
-variable "remoteClusters" {
+variable "remote_clusters" {
   type        = any
   description = <<-EOF
     Controlling of connectivity between remote clusters within the same kubernetes cluster.

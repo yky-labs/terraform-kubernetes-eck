@@ -22,7 +22,7 @@ resource "kubectl_manifest" "this" {
     kind: Elasticsearch
     metadata:
       name: ${var.name}
-      namespace: ${var.namespace}
+      namespace: ${local.namespace}
       %{~ if var.labels != null ~}
       labels:
         ${indent(8, yamlencode(var.labels))}
@@ -55,19 +55,19 @@ resource "kubectl_manifest" "this" {
         ${indent(4, yamlencode(var.http))}
       %{~ endif ~}
 
-      %{~ if var.secureSettings != null ~}
+      %{~ if var.secure_settings != null ~}
       secureSettings:
-        ${indent(4, yamlencode(var.secureSettings))}
+        ${indent(4, yamlencode(var.secure_settings))}
       %{~ endif ~}
 
-      %{~ if var.updateStrategy != null ~}
+      %{~ if var.update_strategy != null ~}
       updateStrategy:
-        ${indent(4, yamlencode(var.updateStrategy))}
+        ${indent(4, yamlencode(var.update_strategy))}
       %{~ endif ~}
 
-      %{~ if var.remoteClusters != null ~}
+      %{~ if var.remote_clusters != null ~}
       remoteClusters:
-        ${indent(4, yamlencode(var.remoteClusters))}
+        ${indent(4, yamlencode(var.remote_clusters))}
       %{~ endif ~}
 
       nodeSets:
