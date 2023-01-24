@@ -23,6 +23,6 @@ variable "kibana_version" {
 }
 
 variable "elasticsearch_ref" {
-  type        = number
+  type        = string
   description = "Elasticsearch cluster name."
 }
